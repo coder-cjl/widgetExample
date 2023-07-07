@@ -97,6 +97,19 @@ class DemoWidget extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 var json = jsonEncode(
+                  FlutterTimeWidgetData(
+                    family: WidgetFamilyEnum.systemLarge,
+                    time: "https://picsum.photos/200/300",
+                  ),
+                );
+                WidgetKit.setItem("remove", json, suiteName);
+                channel.invokeMethod("remove");
+              },
+              child: const Text("remove large widget 2"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                var json = jsonEncode(
                   FlutterPhotoWidgetData(
                     family: WidgetFamilyEnum.accessoryCircular,
                     photo: "https://picsum.photos/200/300",
